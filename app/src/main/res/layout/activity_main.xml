@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
+    <ProgressBar
+        android:id="@+id/progress1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"/>
+    <EditText
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="小机器人的名字"
+         />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="DetailActivity"
+        android:textColor="@drawable/selector"
+        android:enabled="false"
+        />
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="查询"
+        />
+    <!-- 原始表格 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <GridLayout
+            android:id="@+id/tb_stu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        </GridLayout>
+    </ScrollView>
+    <!-- 查询结果表格 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <GridLayout
+            android:id="@+id/result_tb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        </GridLayout>
+    </ScrollView>
+</LinearLayout>

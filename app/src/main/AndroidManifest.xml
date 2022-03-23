@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.helloworld">
+
+    <uses-permission
+        android:name="android.permission.WAKE_LOCK"/>
+    <permission
+        android:name="com.example.helloworld.PERMISSION.allow.read"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.example.helloworld.PERMISSION.allow.write"
+        android:protectionLevel="normal" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HelloWorld">
+        <activity
+            android:name=".ThirdActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".MyNotifIntentService"
+            android:exported="false" />
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".MyJobIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailActivity"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="hello.world"
+                    android:mimeType="abc/xyz"
+                    android:path="/activity/detail"
+                    android:port="8080"
+                    android:scheme="app" />
+                <!--
+                    scheme://host:port/path
+                    比如：app://hello.world:8080/activity/detail
+                -->
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".provider.HelloWorldProvider"
+            android:authorities="com.example.helloworld"
+            android:exported="true"
+            android:readPermission="com.example.helloworld.PERMISSION.allow.read"
+            android:writePermission="com.example.helloworld.PERMISSION.allow.write" />
+    </application>
+
+</manifest>
