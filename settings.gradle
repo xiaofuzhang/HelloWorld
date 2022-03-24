@@ -1,0 +1,7 @@
+include ':shuangseqiu'
+include ':uitest'
+include ':flipperdemo'
+include ':switcherdemo'
+include ':kaixinxiaoxiaole'
+include ':app'
+rootProject.name = "HelloWorld"
